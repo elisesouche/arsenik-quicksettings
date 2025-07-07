@@ -24,10 +24,6 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 import {QuickToggle, SystemIndicator} from 'resource:///org/gnome/shell/ui/quickSettings.js';
 
-// import {loadInterfaceXML} from 'resource:///org/gnome/shell/misc/fileUtils.js';
-
-// Pass the XML string to create a proxy class for that interface
-// const Proxy = Gio.DBusProxy.makeProxyWrapper(interfaceXml);
 
 function runServiceAction(proxy, action) {
     let arg = new GLib.Variant('(s)', [ "replace" ]);
@@ -40,8 +36,8 @@ function runServiceAction(proxy, action) {
     );
 }
 
-const ExampleToggle = GObject.registerClass(
-class ExampleToggle extends QuickToggle {
+const ArsenikToggle = GObject.registerClass(
+class ArsenikToggle extends QuickToggle {
     _init() {
         super._init({
             title: _('Arsenik'),
@@ -95,15 +91,15 @@ class ExampleToggle extends QuickToggle {
     }
 });
 
-const ExampleIndicator = GObject.registerClass(
-class ExampleIndicator extends SystemIndicator {
+const ArsenikIndicator = GObject.registerClass(
+class ArsenikIndicator extends SystemIndicator {
     _init() {
         super._init();
 
         this._indicator = this._addIndicator();
         this._indicator.iconName = 'input-keyboard-symbolic';
 
-        const toggle = new ExampleToggle();
+        const toggle = new ArsenikToggle();
         toggle.bind_property('checked',
             this._indicator, 'visible',
             GObject.BindingFlags.SYNC_CREATE);
@@ -113,9 +109,9 @@ class ExampleIndicator extends SystemIndicator {
 
 });
 
-export default class QuickSettingsExampleExtension extends Extension {
+export default class QuickSettingsArsenikExtension extends Extension {
     enable() {
-        this._indicator = new ExampleIndicator();
+        this._indicator = new ArsenikIndicator();
         Main.panel.statusArea.quickSettings.addExternalIndicator(this._indicator);
     }
 
