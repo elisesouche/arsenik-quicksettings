@@ -1,0 +1,15 @@
+#+title: Arsenik QuickSettings
+
+This GNOME extension adds an button in the quicksettings panel to enable or disable [[https://github.com/jtroo/kanata][Arsenik]].
+To do so it simply activates or deactivates the systemd unit =kanata-arsenik.service=.
+Thus it will only work for you if
+- You are using Arsenik with [[https://github.com/jtroo/kanata][Kanata]]
+- You manage the Kanata daemon with systemd
+- Your systemd unit is named precisely =kanata-arsenik.service=.
+
+This works for me, but if it is not okay for you please tell me and I may add a setting to change the name of the systemd unit.
+
+** Installation
+
+Just clone this repo into =~/.local/share/gnome-shell/extensions=. Then enable the extension in the Gnome Extension app.
+I'll eventually package it for Nix.
