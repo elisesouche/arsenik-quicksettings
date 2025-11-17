@@ -5,7 +5,7 @@
 let
   uuid = "arsenik-quicksettings@souche.one";
   pname = "arsenik-quicksettings";
-  version = "0.1";
+  version = "1.0.1";
   description = "Control Arsenik from the quicksettings";
   link = "https://github.com/elisesouche/arsenik-quicksettings";
 in
@@ -25,7 +25,7 @@ stdenv.mkDerivation {
     homepage = link;
     license = lib.licenses.gpl2Plus; # https://gjs.guide/extensions/review-guidelines/review-guidelines.html#licensing
     platforms = lib.platforms.linux;
-    maintainers = [ lib.maintainers.honnip ];
+    maintainers = [ lib.maintainers.elisesouche ];
   };
   passthru = {
     extensionPortalSlug = pname;

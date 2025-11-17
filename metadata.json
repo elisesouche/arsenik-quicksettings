@@ -3,6 +3,7 @@
   "description": "Control Arsenik from the quicksettings",
   "uuid": "arsenik-quicksettings@souche.one",
   "shell-version": [
-    "48"
+    "48",
+    "49"
   ]
 }
